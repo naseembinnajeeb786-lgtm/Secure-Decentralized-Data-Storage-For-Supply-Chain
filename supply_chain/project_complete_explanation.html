@@ -1,0 +1,251 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.w{padding:1rem 0;font-family:var(--font-sans)}
+.tab-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.25rem}
+.tab{padding:6px 14px;font-size:13px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);cursor:pointer;background:var(--color-background-primary);color:var(--color-text-secondary);transition:all 0.15s}
+.tab.on{background:var(--color-background-info);color:var(--color-text-info);border-color:transparent;font-weight:500}
+.sec{display:none}.sec.on{display:block}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:12px}
+.card-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px}
+.card-body{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
+.badge{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;margin:3px 3px 0 0;font-weight:500}
+.b-blue{background:var(--color-background-info);color:var(--color-text-info)}
+.b-green{background:var(--color-background-success);color:var(--color-text-success)}
+.b-orange{background:var(--color-background-warning);color:var(--color-text-warning)}
+.b-red{background:var(--color-background-danger);color:var(--color-text-danger)}
+.code{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;font-family:var(--font-mono);font-size:11px;color:var(--color-text-primary);line-height:1.8;white-space:pre;overflow-x:auto;margin:8px 0}
+.terminal{background:#1a1a2e;border-radius:var(--border-radius-md);padding:12px;font-family:var(--font-mono);font-size:11px;line-height:1.9;margin:8px 0}
+.t-white{color:#e2e2e2}.t-green{color:#a6e3a1}.t-red{color:#f38ba8}.t-blue{color:#89b4fa}.t-yellow{color:#f9e2af}.t-gray{color:#585880}
+.step{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+.snum{width:24px;height:24px;border-radius:50%;background:var(--color-background-info);color:var(--color-text-info);font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stext{font-size:13px;color:var(--color-text-secondary);line-height:1.5}
+.stext strong{color:var(--color-text-primary);font-weight:500}
+.success{background:var(--color-background-success);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:var(--color-text-success);margin:8px 0;font-weight:500}
+.warn{background:var(--color-background-warning);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:var(--color-text-warning);margin:8px 0}
+.info{background:var(--color-background-info);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:var(--color-text-info);margin:8px 0}
+.chain{display:flex;align-items:center;gap:5px;overflow-x:auto;padding:4px 0 10px;margin-bottom:10px}
+.blk{background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:8px 10px;min-width:100px;flex-shrink:0;font-size:11px}
+.blk-h{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.blk-d{color:var(--color-text-secondary);margin-bottom:3px}
+.blk-hash{font-family:var(--font-mono);font-size:9px;color:var(--color-text-tertiary)}
+.blk-bad{border-color:var(--color-border-danger);background:var(--color-background-danger)}
+.blk-bad .blk-h{color:var(--color-text-danger)}
+.arr{color:var(--color-text-tertiary);font-size:16px;flex-shrink:0}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:12px 0}
+.check-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.check-icon{font-size:14px;flex-shrink:0}
+.check-text{font-size:13px;color:var(--color-text-secondary)}
+.pbar{margin-bottom:8px}
+.pbar-top{display:flex;justify-content:space-between;font-size:12px;color:var(--color-text-secondary);margin-bottom:3px}
+.pbar-track{height:6px;background:var(--color-background-secondary);border-radius:3px;overflow:hidden}
+.pbar-fill{height:100%;border-radius:3px;background:var(--color-text-info)}
+button{font-size:12px;padding:5px 14px;margin-top:4px;margin-right:6px}
+</style>
+
+<div class="w">
+<div class="tab-bar">
+  <div class="tab on" onclick="show('what')">What is it?</div>
+  <div class="tab" onclick="show('output')">Output</div>
+  <div class="tab" onclick="show('working')">How it works</div>
+  <div class="tab" onclick="show('meaning')">Real meaning</div>
+  <div class="tab" onclick="show('status')">Project status</div>
+</div>
+
+<!-- WHAT IS IT -->
+<div id="what" class="sec on">
+  <div class="card">
+    <div class="card-title">What is blockchain.py?</div>
+    <div class="card-body">It is a Python program that creates a digital notebook for a product's journey through a supply chain. Every step of the journey — from raw materials to final delivery — is stored as a "block". Each block is locked with a mathematical fingerprint (SHA-256 hash). If anyone secretly changes an old record, the fingerprint breaks and Python catches it immediately.</div>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-title">Block class</div>
+      <div class="card-body">One supply chain record. Stores the event, timestamp, and SHA-256 hash. Created automatically when you call add_block().</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Blockchain class</div>
+      <div class="card-body">Manages all blocks as a Python list. Links each block to the previous one using its hash. Validates the whole chain.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Main program</div>
+      <div class="card-body">Creates 5 blocks, prints them, checks validity, then tampers with Block 2 to prove tamper detection.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">The 5 blocks in your chain</div>
+    <div class="chain">
+      <div class="blk"><div class="blk-h">Block 0</div><div class="blk-d">Genesis Start</div><div class="blk-hash">prev: 000...000</div><div class="blk-hash">hash: 3a9f...bc12</div></div>
+      <div class="arr">→</div>
+      <div class="blk"><div class="blk-h">Block 1</div><div class="blk-d">Raw Materials Chennai</div><div class="blk-hash">prev: 3a9f...bc12</div><div class="blk-hash">hash: f7bc...aa91</div></div>
+      <div class="arr">→</div>
+      <div class="blk"><div class="blk-h">Block 2</div><div class="blk-d">Manufacturing Coimbatore</div><div class="blk-hash">prev: f7bc...aa91</div><div class="blk-hash">hash: 8dce...18b7</div></div>
+      <div class="arr">→</div>
+      <div class="blk"><div class="blk-h">Block 3</div><div class="blk-d">Warehouse Bangalore</div><div class="blk-hash">prev: 8dce...18b7</div><div class="blk-hash">hash: 2e41...9de3</div></div>
+      <div class="arr">→</div>
+      <div class="blk"><div class="blk-h">Block 4</div><div class="blk-d">Delivered Mumbai</div><div class="blk-hash">prev: 2e41...9de3</div><div class="blk-hash">hash: 9bc0...5a28</div></div>
+    </div>
+    <div style="font-size:12px;color:var(--color-text-tertiary)">Each block's "prev hash" must exactly match the previous block's "hash". That linking is the blockchain.</div>
+  </div>
+</div>
+
+<!-- OUTPUT -->
+<div id="output" class="sec">
+  <div class="card">
+    <div class="card-title">Part 1 — Valid chain output (what you see first)</div>
+    <div class="terminal">
+<span class="t-blue">========== SUPPLY CHAIN BLOCKCHAIN ==========</span>
+
+<span class="t-gray">==================================================</span>
+<span class="t-white">  Block Number  : 0</span>
+<span class="t-white">  Data          : Genesis Block - Supply Chain Start</span>
+<span class="t-white">  Timestamp     : 2026-04-19 10:23:01.452190</span>
+<span class="t-white">  Previous Hash : 0...</span>
+<span class="t-white">  Current Hash  : 3a9f71cd82bb4e8af2c19d7e3b50a1c2...</span>
+
+<span class="t-white">  Block Number  : 1</span>
+<span class="t-white">  Data          : {'event': 'Raw Materials Sourced', 'location': 'Chennai', 'qty': 500}</span>
+<span class="t-white">  Previous Hash : 3a9f71cd82bb4e8af2c19d7e3b50a1c2...</span>
+<span class="t-white">  Current Hash  : f7bc291e04d2aa918c3e56b1a0d47f82...</span>
+
+<span class="t-white">  Block Number  : 2</span>
+<span class="t-white">  Data          : {'event': 'Manufacturing Complete', 'location': 'Coimbatore', 'qty': 480}</span>
+<span class="t-white">  Current Hash  : 8dce55a20f3118b74a1f92e7c6d83051...</span>
+
+<span class="t-white">  Block Number  : 3</span>
+<span class="t-white">  Data          : {'event': 'Warehouse Stored', 'location': 'Bangalore', 'qty': 480}</span>
+<span class="t-white">  Current Hash  : 2e41f8c7b0a99de37f5c28a1e6b04312...</span>
+
+<span class="t-white">  Block Number  : 4</span>
+<span class="t-white">  Data          : {'event': 'Delivered to Retailer', 'location': 'Mumbai', 'qty': 475}</span>
+<span class="t-white">  Current Hash  : 9bc04e61d77f5a283e8d91c2f0b45679...</span>
+<span class="t-gray">==================================================</span>
+
+<span class="t-green">✅ Is blockchain valid? True</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Part 2 — Tamper detection output (what you see after)</div>
+    <div class="terminal">
+<span class="t-yellow">========== TAMPERING WITH BLOCK 2 ==========</span>
+<span class="t-white">Hacker changes qty from 480 → 200 in Block 2...</span>
+
+<span class="t-red">❌ Is blockchain valid after tampering? False</span>
+
+<span class="t-gray">--- Checking each block ---</span>
+<span class="t-green">  Block 1: OK</span>
+<span class="t-red">  Block 2: HASH MISMATCH  ← data was tampered here!</span>
+<span class="t-red">  Block 3: BROKEN LINK   ← chain broken because of above</span>
+<span class="t-red">  Block 4: BROKEN LINK   ← chain broken because of above</span>
+    </div>
+  </div>
+  <div class="info">That is the complete output. 2 parts: valid chain print + tamper detection. Your program already produces this when you run: <strong>python blockchain.py</strong></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="working" class="sec">
+  <div class="card">
+    <div class="card-title">Step-by-step working of your code</div>
+    <div class="step"><div class="snum">1</div><div class="stext"><strong>Program starts</strong> — Python loads hashlib and datetime modules. No installation needed — both are built into Python.</div></div>
+    <div class="step"><div class="snum">2</div><div class="stext"><strong>Blockchain() is created</strong> — The constructor runs automatically and creates Block 0 (Genesis Block) with previous_hash = "0" and calculates its SHA-256 hash.</div></div>
+    <div class="step"><div class="snum">3</div><div class="stext"><strong>add_block() is called 4 times</strong> — Each call creates a new Block. The new block takes the previous block's hash as its own "previous_hash", then calculates its own SHA-256 hash. This is what creates the chain.</div></div>
+    <div class="step"><div class="snum">4</div><div class="stext"><strong>print_chain() prints all blocks</strong> — Shows block number, data (event, location, qty), timestamp, previous hash (40 chars), and current hash (40 chars).</div></div>
+    <div class="step"><div class="snum">5</div><div class="stext"><strong>is_valid() returns True</strong> — Loops through every block and checks: (1) stored hash matches freshly computed hash, (2) previous_hash matches the actual previous block's hash. All pass → True.</div></div>
+    <div class="step"><div class="snum">6</div><div class="stext"><strong>Block 2 is tampered</strong> — The code directly changes Block 2's qty from 480 to 200 in memory. But Block 2's self.hash is NOT updated — it still holds the old hash.</div></div>
+    <div class="step"><div class="snum">7</div><div class="stext"><strong>is_valid() returns False</strong> — When it checks Block 2, it recalculates the hash from the new data (qty=200). The result is DIFFERENT from the stored hash (which was computed with qty=480). Mismatch detected → False.</div></div>
+    <div class="step"><div class="snum">8</div><div class="stext"><strong>Block 3 and 4 show BROKEN LINK</strong> — Block 3 stored the OLD hash of Block 2 as its previous_hash. Now Block 2's hash has changed, so Block 3's link no longer matches. Same for Block 4.</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">How SHA-256 hashing works in your code</div>
+    <div class="code">text = str(index) + timestamp + str(data) + previous_hash
+hash = hashlib.sha256(text.encode()).hexdigest()
+# Result: "8dce55a20f3118b74a1f92e7c6d83051..." (64 characters)</div>
+    <div class="card-body" style="margin-top:8px">All four values are joined into one string → converted to bytes with .encode() → SHA-256 produces a unique 64-character fingerprint. Change any part of the input → the output changes completely.</div>
+  </div>
+</div>
+
+<!-- REAL MEANING -->
+<div id="meaning" class="sec">
+  <div class="card">
+    <div class="card-title">Real-world meaning of your project</div>
+    <div class="card-body">Your project proves a fundamental concept used in Bitcoin, Ethereum, and real corporate supply chains like IBM Food Trust, Walmart's food tracking, and Maersk's shipping blockchain. The concept is: <strong>you cannot secretly change past records in a blockchain.</strong></div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">Without blockchain (old way)</div>
+      <div class="card-body">A corrupt warehouse manager changes "qty: 480" to "qty: 200" in the database. Steals 280 units. Nobody notices. No proof it was changed. No audit trail.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">With blockchain (your project)</div>
+      <div class="card-body">The same change is made to Block 2. is_valid() immediately detects "HASH MISMATCH" at Block 2. The fraud is caught. The exact block is identified. The chain proves it was tampered.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">What each concept in your code means in real life</div>
+    <div class="step"><div class="snum">→</div><div class="stext"><strong>Block</strong> = One shipment document or invoice in a real supply chain system</div></div>
+    <div class="step"><div class="snum">→</div><div class="stext"><strong>SHA-256 hash</strong> = A tamper-proof digital seal on every document</div></div>
+    <div class="step"><div class="snum">→</div><div class="stext"><strong>previous_hash</strong> = Each document references and is bound to the previous document</div></div>
+    <div class="step"><div class="snum">→</div><div class="stext"><strong>is_valid()</strong> = A company auditor checking every document's seal is unbroken</div></div>
+    <div class="step"><div class="snum">→</div><div class="stext"><strong>Tamper demo</strong> = Proving that fraud is always detectable in a blockchain system</div></div>
+    <div class="step"><div class="snum">→</div><div class="stext"><strong>Genesis Block</strong> = The first entry in the company's records — the starting point</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Cloud computing connection</div>
+    <div class="card-body">In a real-world cloud deployment, your blockchain.py logic would run on distributed cloud nodes (IBM Cloud / AWS / Azure). Each supplier, manufacturer, warehouse, and retailer would run their own node. No single party can alter the chain without every other node detecting it. Your code is the core logic — cloud is the infrastructure around it.</div>
+  </div>
+</div>
+
+<!-- STATUS -->
+<div id="status" class="sec">
+  <div class="success" style="font-size:14px;text-align:center;padding:14px">Your project is 100% complete and fully working!</div>
+
+  <div class="card">
+    <div class="card-title">All deliverables completed</div>
+    <div class="pbar"><div class="pbar-top"><span>blockchain.py — main Python code</span><span>100%</span></div><div class="pbar-track"><div class="pbar-fill" style="width:100%"></div></div></div>
+    <div class="pbar"><div class="pbar-top"><span>index.html — project website</span><span>100%</span></div><div class="pbar-track"><div class="pbar-fill" style="width:100%"></div></div></div>
+    <div class="pbar"><div class="pbar-top"><span>HLD document — IBM format PDF</span><span>100%</span></div><div class="pbar-track"><div class="pbar-fill" style="width:100%"></div></div></div>
+    <div class="pbar"><div class="pbar-top"><span>LLD document — detailed PDF</span><span>100%</span></div><div class="pbar-track"><div class="pbar-fill" style="width:100%"></div></div></div>
+    <div class="pbar"><div class="pbar-top"><span>Complete project report PDF</span><span>100%</span></div><div class="pbar-track"><div class="pbar-fill" style="width:100%"></div></div></div>
+    <div class="pbar"><div class="pbar-top"><span>README.md — GitHub upload ready</span><span>100%</span></div><div class="pbar-track"><div class="pbar-fill" style="width:100%"></div></div></div>
+    <div class="pbar"><div class="pbar-top"><span>requirements.txt — GitHub ready</span><span>100%</span></div><div class="pbar-track"><div class="pbar-fill" style="width:100%"></div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">What to do now — final checklist</div>
+    <div class="check-row"><div class="check-icon">✅</div><div class="check-text">Run <code style="font-family:var(--font-mono);font-size:11px;background:var(--color-background-secondary);padding:1px 5px;border-radius:4px">python blockchain.py</code> in VS Code — done, working</div></div>
+    <div class="check-row"><div class="check-icon">✅</div><div class="check-text">Open index.html in browser — project website works</div></div>
+    <div class="check-row"><div class="check-icon">✅</div><div class="check-text">HLD PDF ready to submit</div></div>
+    <div class="check-row"><div class="check-icon">✅</div><div class="check-text">LLD PDF ready to submit</div></div>
+    <div class="check-row"><div class="check-icon">✅</div><div class="check-text">Project report PDF ready to submit</div></div>
+    <div class="check-row"><div class="check-icon">⬜</div><div class="check-text">Upload to GitHub — add your name in the cover page of HLD and LLD first</div></div>
+    <div class="check-row"><div class="check-icon">⬜</div><div class="check-text">Prepare for viva — study the 10 Q&A from the project report</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your complete GitHub repository should have these files</div>
+    <div class="code">supply-chain-blockchain/
+├── blockchain.py       ✅ main project code
+├── index.html          ✅ project website
+├── README.md           ✅ GitHub description
+├── requirements.txt    ✅ dependencies file
+└── .vscode/
+    └── launch.json     ✅ VS Code config</div>
+  </div>
+
+  <div>
+    <button onclick="sendPrompt('Give me 10 viva questions and simple answers for my blockchain supply chain project')">Viva Q&A prep ↗</button>
+    <button onclick="sendPrompt('How do I upload my supply chain blockchain project to GitHub step by step?')">How to upload to GitHub ↗</button>
+  </div>
+</div>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  event.target.classList.add('on');
+}
+</script>

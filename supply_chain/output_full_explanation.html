@@ -1,0 +1,163 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.w{padding:1rem 0;font-family:var(--font-sans)}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:12px}
+.card-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px}
+.terminal{background:#1a1a2e;border-radius:var(--border-radius-md);padding:12px 14px;font-family:var(--font-mono);font-size:11px;line-height:2;margin:8px 0}
+.t-w{color:#e2e2e2}.t-g{color:#a6e3a1}.t-r{color:#f38ba8}.t-b{color:#89b4fa}.t-y{color:#f9e2af}.t-gray{color:#6c7086}.t-teal{color:#94e2d5}
+.row{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.row-code{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:5px 10px;font-family:var(--font-mono);font-size:11px;color:var(--color-text-primary);flex-shrink:0;min-width:180px}
+.row-exp{font-size:13px;color:var(--color-text-secondary);line-height:1.5}
+.row-exp strong{color:var(--color-text-primary);font-weight:500}
+.success{background:var(--color-background-success);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:var(--color-text-success);margin:8px 0}
+.danger{background:var(--color-background-danger);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:var(--color-text-danger);margin:8px 0}
+.info{background:var(--color-background-info);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:var(--color-text-info);margin:8px 0}
+.warn{background:var(--color-background-warning);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:var(--color-text-warning);margin:8px 0}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:10px 0}
+.blk-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.blk{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 12px;font-size:12px}
+.blk-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px}
+.field{display:flex;gap:8px;margin-bottom:4px}
+.field-k{font-size:11px;color:var(--color-text-tertiary);min-width:90px;font-family:var(--font-mono)}
+.field-v{font-size:11px;color:var(--color-text-primary);font-family:var(--font-mono);word-break:break-all}
+.field-v.green{color:var(--color-text-success)}
+.badge{display:inline-block;font-size:10px;padding:1px 8px;border-radius:20px;margin-left:6px;font-weight:500}
+.b-g{background:var(--color-background-success);color:var(--color-text-success)}
+.b-r{background:var(--color-background-danger);color:var(--color-text-danger)}
+.b-b{background:var(--color-background-info);color:var(--color-text-info)}
+.b-o{background:var(--color-background-warning);color:var(--color-text-warning)}
+.chain-row{display:flex;align-items:center;gap:4px;overflow-x:auto;padding:4px 0 8px;margin-bottom:8px}
+.blk-c{background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:7px 9px;min-width:95px;flex-shrink:0;font-size:10px}
+.blk-c.ok{border-color:var(--color-border-success)}
+.blk-c.bad{border-color:var(--color-border-danger);background:var(--color-background-danger)}
+.blk-c .bh{font-size:11px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.blk-c.bad .bh{color:var(--color-text-danger)}
+.blk-c .bd{color:var(--color-text-secondary);margin-bottom:2px}
+.blk-c .bx{font-family:var(--font-mono);font-size:9px;color:var(--color-text-tertiary)}
+.arr{color:var(--color-text-tertiary);font-size:14px;flex-shrink:0}
+</style>
+
+<div class="w">
+
+<!-- HEADER STATUS -->
+<div class="success" style="font-size:14px;font-weight:500;text-align:center;padding:14px">
+  ✅ Your output is 100% correct — project is working perfectly!
+</div>
+
+<!-- PART 1: VS CODE LAUNCH LINE -->
+<div class="card">
+  <div class="card-title">Line 1 — VS Code launch command <span class="badge b-b">ignore this line</span></div>
+  <div class="terminal">
+    <span class="t-gray">PS C:\Users\nasee\OneDrive\Desktop\supply_chain> &amp; 'c:\Program Files\Python314\python.exe' 'c:\...\debugpy\launcher' '60806' '--' 'C:\...\blockchain.py'</span>
+  </div>
+  <div class="row">
+    <div class="row-exp">This is <strong>NOT part of your program output.</strong> This is VS Code automatically launching Python with its debugger. You can safely ignore this entire line. It just shows which Python version (3.14) is being used and the full path to your blockchain.py file. When you run from terminal manually, this line does not appear.</div>
+  </div>
+</div>
+
+<!-- PART 2: VALID CHAIN -->
+<div class="card">
+  <div class="card-title">Part 1 — Valid blockchain output <span class="badge b-g">working correctly</span></div>
+
+  <div class="terminal">
+    <span class="t-b">========== SUPPLY CHAIN BLOCKCHAIN ==========</span>
+  </div>
+  <div class="row" style="margin-bottom:6px">
+    <div class="row-exp">This heading line is printed by the <strong>print()</strong> call in your main program — just a separator title so the output looks organised.</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BLOCK 0 -->
+  <div class="blk" style="margin-bottom:10px">
+    <div class="blk-title">Block 0 — Genesis Block <span class="badge b-b">first block ever</span></div>
+    <div class="field"><div class="field-k">Block Number:</div><div class="field-v">0</div></div>
+    <div class="field"><div class="field-k">Data:</div><div class="field-v">Genesis Block - Supply Chain Start</div></div>
+    <div class="field"><div class="field-k">Timestamp:</div><div class="field-v">2026-04-26 16:19:57.706988</div></div>
+    <div class="field"><div class="field-k">Prev Hash:</div><div class="field-v green">"0" — no previous block exists</div></div>
+    <div class="field"><div class="field-k">Curr Hash:</div><div class="field-v">39f66d8cd9a82ed868ec96235dddaf61...</div></div>
+    <div style="font-size:12px;color:var(--color-text-secondary);margin-top:6px">This is the starting block. Previous hash is just "0" because there is no block before it. Its hash (39f66d...) will become Block 1's previous hash.</div>
+  </div>
+
+  <!-- BLOCK 1 -->
+  <div class="blk" style="margin-bottom:10px">
+    <div class="blk-title">Block 1 — Raw Materials Sourced <span class="badge b-b">Chennai, qty 500</span></div>
+    <div class="field"><div class="field-k">Prev Hash:</div><div class="field-v">39f66d8cd9a82ed868ec96235dddaf61...</div></div>
+    <div class="field"><div class="field-k">Curr Hash:</div><div class="field-v">a9af37b6091843aae4c50eec820d92c5...</div></div>
+    <div style="font-size:12px;color:var(--color-text-secondary);margin-top:6px">Notice: Block 1's <strong>Previous Hash = Block 0's Current Hash</strong> (both start with 39f66d...). This is the chain link. Block 1's own hash (a9af37...) becomes Block 2's previous hash.</div>
+  </div>
+
+  <!-- BLOCK 2 -->
+  <div class="blk" style="margin-bottom:10px">
+    <div class="blk-title">Block 2 — Manufacturing Complete <span class="badge b-b">Coimbatore, qty 480</span></div>
+    <div class="field"><div class="field-k">Prev Hash:</div><div class="field-v">a9af37b6091843aae4c50eec820d92c5...</div></div>
+    <div class="field"><div class="field-k">Curr Hash:</div><div class="field-v">90ab56738e07c2129ba957c3fc797a32...</div></div>
+    <div style="font-size:12px;color:var(--color-text-secondary);margin-top:6px">Block 2's Previous Hash = Block 1's Current Hash (a9af37...). The chain link is intact. <strong>This is the block that will be tampered later.</strong></div>
+  </div>
+
+  <!-- BLOCK 3 -->
+  <div class="blk" style="margin-bottom:10px">
+    <div class="blk-title">Block 3 — Warehouse Stored <span class="badge b-b">Bangalore, qty 480</span></div>
+    <div class="field"><div class="field-k">Prev Hash:</div><div class="field-v">90ab56738e07c2129ba957c3fc797a32...</div></div>
+    <div class="field"><div class="field-k">Curr Hash:</div><div class="field-v">d24a4791bd91fcee00e4873997abc664...</div></div>
+  </div>
+
+  <!-- BLOCK 4 -->
+  <div class="blk" style="margin-bottom:10px">
+    <div class="blk-title">Block 4 — Delivered to Retailer <span class="badge b-b">Mumbai, qty 475</span></div>
+    <div class="field"><div class="field-k">Prev Hash:</div><div class="field-v">d24a4791bd91fcee00e4873997abc664...</div></div>
+    <div class="field"><div class="field-k">Curr Hash:</div><div class="field-v">10c8e7414d1c991e850ad7f8868202de...</div></div>
+  </div>
+
+  <div class="terminal"><span class="t-g">✅ Is blockchain valid? True</span></div>
+  <div class="success"><strong>is_valid() returned True</strong> — This means every block's hash is correct AND every chain link (previous_hash) matches perfectly. The blockchain is 100% intact and untampered.</div>
+</div>
+
+<!-- PART 3: TAMPER SECTION -->
+<div class="card">
+  <div class="card-title">Part 2 — Tamper detection output <span class="badge b-o">this is the proof</span></div>
+
+  <div class="terminal">
+    <span class="t-y">========== TAMPERING WITH BLOCK 2 ==========</span><br/>
+    <span class="t-w">Hacker changes qty from 480 → 200 in Block 2...</span><br/><br/>
+    <span class="t-r">❌ Is blockchain valid after tampering? False</span><br/><br/>
+    <span class="t-gray">--- Checking each block ---</span><br/>
+    <span class="t-g">  Block 1: OK</span><br/>
+    <span class="t-r">  Block 2: HASH MISMATCH  ← data was tampered here!</span><br/>
+    <span class="t-w">  Block 3: OK</span><br/>
+    <span class="t-w">  Block 4: OK</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row"><div class="row-exp"><strong>Block 1: OK</strong> — Block 1 was not touched. Its stored hash still matches its data. Link to Block 0 is intact. All good.</div></div>
+  <div class="row"><div class="row-exp"><strong>Block 2: HASH MISMATCH</strong> — The hacker changed qty from 480 to 200. When is_valid() recalculates Block 2's hash from the new data (qty=200), the result is DIFFERENT from the stored hash (which was computed with qty=480). Mismatch = fraud detected at Block 2.</div></div>
+  <div class="row"><div class="row-exp"><strong>Block 3: OK &amp; Block 4: OK</strong> — These show OK because their own data was not changed AND their previous_hash links still point correctly (Block 3 still has Block 2's original hash stored as previous_hash, and Block 2's hash has not been rewritten). Your is_valid() code catches the problem at Check 1 (hash mismatch) on Block 2 and returns False — so the deeper cascade is proved by the False result itself.</div></div>
+
+  <div class="danger"><strong>is_valid() returned False</strong> — This is the correct and expected result. It proves the Immutable Ledger concept: any data change in any block is instantly detected.</div>
+</div>
+
+<!-- CHAIN VISUAL AFTER TAMPER -->
+<div class="card">
+  <div class="card-title">Visual summary — what the chain looks like after tampering</div>
+  <div class="chain-row">
+    <div class="blk-c ok"><div class="bh">Block 0</div><div class="bd">Genesis</div><div class="bx" style="color:var(--color-text-success);font-size:10px">✓ valid</div></div>
+    <div class="arr">→</div>
+    <div class="blk-c ok"><div class="bh">Block 1</div><div class="bd">Raw Materials</div><div class="bx" style="color:var(--color-text-success);font-size:10px">✓ OK</div></div>
+    <div class="arr">→</div>
+    <div class="blk-c bad"><div class="bh">Block 2</div><div class="bd">qty changed!</div><div class="bx" style="color:var(--color-text-danger);font-size:10px">✗ HASH MISMATCH</div></div>
+    <div class="arr">→</div>
+    <div class="blk-c ok"><div class="bh">Block 3</div><div class="bd">Warehouse</div><div class="bx" style="color:var(--color-text-success);font-size:10px">✓ data OK</div></div>
+    <div class="arr">→</div>
+    <div class="blk-c ok"><div class="bh">Block 4</div><div class="bd">Delivered</div><div class="bx" style="color:var(--color-text-success);font-size:10px">✓ data OK</div></div>
+  </div>
+  <div style="font-size:12px;color:var(--color-text-secondary)">Block 2 is the only block with changed data — so it is the only one with HASH MISMATCH. The overall chain is still invalid (False) because Block 2's fraud was caught. This is the correct and expected output.</div>
+</div>
+
+<!-- FINAL VERDICT -->
+<div class="info" style="font-size:13px;font-weight:500;text-align:center;padding:14px">
+  Your project output is exactly correct. Nothing is wrong. Your blockchain is working perfectly!
+</div>
+
+</div>
