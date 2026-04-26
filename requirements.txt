@@ -1,0 +1,58 @@
+# ─────────────────────────────────────────────────────────────────
+#  requirements.txt
+#  Project  : Secure Decentralized Data Storage for Supply Chain
+#  Author   : KC Muhamed Naseem Bin Najeeb
+#  Reg. No  : 23BCAICD043
+#  Project ID : PRJN26-090
+#  Institution: Yenepoya Deemed To Be University
+#  Programme  : BCA (AI, Cloud Computing & DevOps) with IBM & TCS
+#  Semester   : VI Semester
+# ─────────────────────────────────────────────────────────────────
+
+# ✅ NO EXTERNAL LIBRARIES REQUIRED
+#
+# This project uses ONLY Python built-in standard library modules.
+# No pip install is needed. All modules below come pre-installed
+# with Python 3.10 and above.
+#
+# Simply run:  python blockchain.py
+# ─────────────────────────────────────────────────────────────────
+
+# BUILT-IN MODULES USED (standard library — no installation needed)
+# -----------------------------------------------------------------
+
+# hashlib  — SHA-256 cryptographic hashing for block fingerprints
+# Usage    : import hashlib
+# Version  : included with Python 3.10+
+# Docs     : https://docs.python.org/3/library/hashlib.html
+
+# datetime — timestamps for each block in the blockchain
+# Usage    : import datetime
+# Version  : included with Python 3.10+
+# Docs     : https://docs.python.org/3/library/datetime.html
+
+# ─────────────────────────────────────────────────────────────────
+# PYTHON VERSION REQUIREMENT
+# ─────────────────────────────────────────────────────────────────
+# python_requires >= 3.10
+
+# ─────────────────────────────────────────────────────────────────
+# DEVELOPMENT TOOLS (optional — not required to run the project)
+# ─────────────────────────────────────────────────────────────────
+
+# VS Code     — code editor used for development
+# Download    : https://code.visualstudio.com
+# Extension   : ms-python.python (Python extension by Microsoft)
+
+# ─────────────────────────────────────────────────────────────────
+# HOW TO VERIFY YOUR PYTHON VERSION
+# ─────────────────────────────────────────────────────────────────
+# Run this command in your terminal:
+#   python --version
+#
+# Expected output:
+#   Python 3.10.x  or  Python 3.11.x  or  Python 3.14.x
+#
+# If Python is not installed, download it from:
+#   https://www.python.org/downloads/
+# ─────────────────────────────────────────────────────────────────
